@@ -83,7 +83,7 @@ summary(stepsPerDay, digits=7)
 
 The mean total number of steps taken per day is 10766. The median total number of steps taken per day is 10765
 
-The above refers to uncleaned data. Note that some values for the number of steps per five-minute interval appear somewhat implausible, suggesting that the classification algorithm used in the recording device might have failed in certain cases. The maximum number of steps per 5-minute interval was ``806``, corresponding to ``2.6867`` steps per second. However, since these high values were not isolated outliers, and might also conceivably have resulted from some physical exercise like aerobics or cycling (as also indicated by the bimodal shape of the distribution of log steps), I decided to keep them in the analyses.
+The above refers to uncleaned data. Note that some values for the number of steps per five-minute interval appear somewhat implausible, suggesting that the classification algorithm used in the recording device might have failed in certain cases. The maximum number of steps per 5-minute interval was ``806``, corresponding to ``2.6867`` steps per second. However, since these high values were not isolated outliers, and might also conceivably have resulted from some physical exercise like aerobics or cycling (as also indicated by the multimodal shape of the distribution of log steps), I decided to keep them in the analyses.
 
 
 ```r
@@ -281,7 +281,7 @@ which.max(table(stepsPerDayFilled))
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-The following plot shows that there are differences in the activity patterns between weekdays and weekends. The morning activity peak during weekdays is more pronounced, suggesting a fairly orderly life, and preceded by a smaller peak, suggesting that sometimes the person rises an hour earlier. During the weekends, the persons still has a morning activity peak, but this is a little bit later and more washed out. On weekends, there is another peak in the afternoon, possibly suggesting a stroll or run. Activity also continues a bit later into the night on the weekends.
+The following plot shows that there are differences in the activity patterns between weekdays and weekends (in the same format as the plot of the average daily activity pattern above). The morning activity peak during weekdays is more pronounced, suggesting a fairly orderly life, and preceded by a smaller peak, suggesting that sometimes the person rises an hour earlier. During the weekends, the persons still has a morning activity peak, but this is a little bit later and more washed out. On weekends, there is another peak in the afternoon, possibly suggesting a stroll or run. Activity also continues a bit later into the night on the weekends.
 
 ```r
 actmon$weekday <- weekdays(actmon$ddate)
